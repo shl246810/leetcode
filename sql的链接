@@ -1,4 +1,19 @@
 sql的链接主要分为三种：内连接，外链接和交叉链接
 其中外链接又分为左外链接和右外链接
 
-首先
+一.内连接：将两张表按照on的条件，返回公共部分，即两个的交集。
+形式有两个（会显示两个id）：
+1：select * from  Table_1 t1,Table_2  t2（where t1.id=t2.id）;
+2：select * from  Table_1 t1 inner join Table_2  t2 on t1.id=t2.id;
+
+二.外链接
+
+1.left join 左外链接（tableA left join tableB）:保留tableA的全部，加上两表的公共集。
+例：select * from Table_1 t1 left (outer)join Table_2 t2 on t1.id =t2.id;
+
+2.right join  右外链接（tableA right join tableB）：保留tableB的全部，加上两表的公共集
+例：select * from Table_1 t1 right (outer) join Table_2 t2 on t1.id =t2.id;
+
+三.交叉链接
+返回两个表的笛卡尔积（左表的每一行与右表中的所有行链接）
+例：select * from Table_1 as a cross join Table_2 as b
