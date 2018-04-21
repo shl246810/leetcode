@@ -4,4 +4,17 @@
 
 这个目录下将记录所有leetcode刷题的经历，以后会把数据库的相关知识整理出来，与君共勉。
 
+175. 组合两个表
+
+中文链接：https://leetcode-cn.com/problems/combine-two-tables/description/
+
+这个应该是整个leetcode最容易的题了
+
+step1:题目条件是：无论 person 是否有地址信息，都需要基于上述两表提供 person 的以下信息
+      所以可以得知我们需要保留person表信息，即我们应该使用left join链接两表
+
+附注：sql的链接说明：
+
+sql如下：(mysql/oralce相同):
+select P.Firstname,P.LastName,A.City,A.state from Person P left join Address A on P.PersonId=A.PersonId
 
