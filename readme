@@ -13,8 +13,24 @@
 step1:题目条件是：无论 person 是否有地址信息，都需要基于上述两表提供 person 的以下信息
       所以可以得知我们需要保留person表信息，即我们应该使用left join链接两表
 
-附注：sql的链接说明：
+附注：sql的链接说明：https://github.com/shl246810/leetcode-sql/blob/master/sql%E7%9A%84%E9%93%BE%E6%8E%A5
 
 sql如下：(mysql/oralce相同):
 select P.Firstname,P.LastName,A.City,A.state from Person P left join Address A on P.PersonId=A.PersonId
 
+176.第二高薪水
+
+中文链接：https://leetcode-cn.com/problems/second-highest-salary/description/
+
+这题就有点难度了
+
+step1：这题是要返回第二高的薪水，第一想到的肯定是排序，然后去找第二高的那一行。
+
+这对于mysql来说，mysql有limit函数，可以返回某一行，或某几行，用法如下：
+SELECT * FROM table_1  LIMIT [offset,] rows | rows OFFSET offset
+例如：select * from table_1 limit 5,10 --检索记录行6-15
+      select * from table_1 limit 5 --检索前5个记录行
+      select * from table_1 limit 5,-1 --从第5行检索记录行到最后
+
+所以，，对于mysql，这道题可以这样解：
+select 
