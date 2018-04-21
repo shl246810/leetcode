@@ -32,5 +32,6 @@ SELECT * FROM table_1  LIMIT [offset,] rows | rows OFFSET offset
       select * from table_1 limit 5 --检索前5个记录行
       select * from table_1 limit 5,-1 --从第5行检索记录行到最后
 
+
 所以，，对于mysql，这道题可以这样解：
 select 
